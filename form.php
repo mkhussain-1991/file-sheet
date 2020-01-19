@@ -1,13 +1,6 @@
 <?php
+
 session_start();
-if(!isset($_SESSION['login'])){
-  header('Location: index.php');
-}
-if(isset($_POST['logout'])){
-  unset($_SESSION['login']);
-  $_SESSION['logout']='ok';
-  header('Location: index.php');
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,14 +22,6 @@ if(isset($_POST['logout'])){
 
 <div class="container">
   <h2>Form</h2>
-  <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">
-            <form action="" method="post">
-            <input type="submit" class="form-control" name="logout" value="LOGOUT">
-          </form>
-
-        </a></li>
-      </ul>
   <form method="post" action="action.php">
     <table class="table bordered">
     <thead>
